@@ -66,8 +66,8 @@ python3 main.py
     extend-ignore = E203, W503
     ```
 max-line-length
-: limite la longueurs des lignes à 88 caractères  
+: limite la longueur des lignes à 88 caractères  
 exclude && extend-ignore
-: pour ignorer certains fichiers  
+: pour ignorer certains fichiers et codes d'erreurs
 
 
