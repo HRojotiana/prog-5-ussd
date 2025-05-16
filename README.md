@@ -52,6 +52,12 @@ pip install -r requirements.txt
 flake8
 ```
 
+### 5. Tester main
+```bash
+cd ussd/
+python3 main.py
+```
+
 ## Fichier de configuration `.flake8`  
     ```
     [flake8]
