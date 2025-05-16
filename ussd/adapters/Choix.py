@@ -7,7 +7,7 @@ class Choix(MenuInterface):
         self.title = title
 
     def afficher_menu(self) -> None:
-        print(f"Menu Choix: {self.title}")
+        print(f"{self.title}")
 
     def ajouter_option(self, option):
         return super().ajouter_option(option)

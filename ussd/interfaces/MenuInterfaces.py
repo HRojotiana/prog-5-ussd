@@ -17,3 +17,7 @@ class MenuInterface(ABC):
     @abstractmethod
     def page_precedente(self) -> None:
         pass
+
+    @abstractmethod
+    def ajouter_option(self, option) -> None:
+        pass
