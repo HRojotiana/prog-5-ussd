@@ -58,6 +58,17 @@ cd ussd/
 python3 main.py
 ```
 
+### 6. Demo
+#### Menu principal
+![Menu principal](assets/ussd_1.png)
+
+#### Navigations
+![navigation_1](assets/ussd_2.png) ![navigation_2](assets/ussd_3.png)
+
+
+#### Timeout
+![timeout](assets/ussd-timeout.png)
+
 ## Fichier de configuration `.flake8`  
     ```
     [flake8]
