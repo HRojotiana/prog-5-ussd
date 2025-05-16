@@ -42,7 +42,6 @@ class MVola(Choix):
 
     def page_suivante(self) -> None:
         element_page_suivante = self.options[4:9]
-        print(element_page_suivante)
         print(f"{self.title}")
         for i in range(4, 8):
             print(f"{i + 1} {self.options[i].title}")
