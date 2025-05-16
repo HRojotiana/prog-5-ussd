@@ -1,5 +1,6 @@
 from interfaces.MenuInterfaces import MenuInterface
 from adapters.Choix import Choix
+from utils.timeout_input import demander_choix_avec_timeout
 from typing import List
 
 
@@ -10,13 +11,24 @@ class MenuPrincipal(MenuInterface):
 
     def afficher_menu(self) -> None:
         self.page_precedente()
-        choix = int(input("\n"))
-        if choix == 0:
-            self.page_suivante()
-        elif 1 <= choix <= len(self.options):
-            self.options[choix - 1].afficher_menu()
-        else:
-            print("Veuillez choisir parmi la liste")
+        choix_str = demander_choix_avec_timeout("\n"
+                                                , timeout=5)
+
+        if choix_str is None:
+            print("Temps écoulé. Fin du menu.")
+            return
+
+        try:
+            choix = int(choix_str)
+            if choix == 0:
+                self.page_suivante()
+            elif 1 <= choix <= len(self.options):
+                self.options[choix - 1].afficher_menu()
+            else:
+                print("Veuillez choisir parmi la liste")
+                self.afficher_menu()
+        except ValueError:
+            print("Entrée invalide. Veuillez saisir un nombre.")
             self.afficher_menu()
 
     def page_suivante(self) -> None:
